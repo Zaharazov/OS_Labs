@@ -1,4 +1,3 @@
-#include <sys/wait.h>
 #include <unistd.h> // for fork() and pipe
 #include <string>
 
