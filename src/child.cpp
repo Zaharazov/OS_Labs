@@ -20,13 +20,15 @@ int main()
 
             divisible /= std::stof(parentdata);
         }
+        
     }
 
     std::string div_str = std::to_string(divisible);
+
     char answer[100];
     sprintf(answer, "The answer is: %f", divisible);
 
-    if (write(output, &answer, 12 + div_str.length()) == -1) {
+    if (write(output, &answer, 15 + div_str.length()) == -1) {
         return -1;
     }
 }
