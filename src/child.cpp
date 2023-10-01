@@ -8,10 +8,12 @@ int main()
     output = open("output.txt", O_WRONLY, 0);
     std::string parentdata;
     float divisible = 0;
+    bool notempty = 0;
 
     while (read(STDIN_FILENO, &parentdata, sizeof(parentdata)) != 0) {
         if (divisible == 0)
         {
+            notempty = 1;
             divisible = std::stof(parentdata);
         }
         else
@@ -21,6 +23,8 @@ int main()
             divisible /= std::stof(parentdata);
         }
     }
+
+    if (!notempty) exit(-1);
 
     std::string div_str = std::to_string(divisible);
 
