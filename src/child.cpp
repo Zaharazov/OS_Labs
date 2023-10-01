@@ -20,7 +20,6 @@ int main()
 
             divisible /= std::stof(parentdata);
         }
-        
     }
 
     std::string div_str = std::to_string(divisible);
