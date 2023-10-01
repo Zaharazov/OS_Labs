@@ -1,3 +1,4 @@
+#include <sys/wait.h>
 #include <unistd.h> // for fork() and pipe
 #include <string>
 
@@ -48,8 +49,12 @@ int main()
             if (write(fd[1], &number, sizeof(number)) == -1) return -1;
         }
 
-        wait(NULL);
         close(fd[1]);
+        int status;
+        waitpid(0, &status, 0);
+
+        if (status != 0) return -1;
+        
     }
     return 0;
 }
