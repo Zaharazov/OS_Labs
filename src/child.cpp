@@ -27,6 +27,7 @@ int main()
     if (!notempty) exit(-1);
 
     std::string div_str = std::to_string(divisible);
+    div_str = div_str.substr(0, 8);
 
     char answer[100];
     sprintf(answer, "The answer is: %f", divisible);
